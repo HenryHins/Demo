@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SKYKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let container = SKYContainer.defaultContainer()
+        container.configAddress("swiftdemo.staging.skygeario.com") //Your server endpoint
+        container.configureWithAPIKey("bbf393a407114594a0f98baae593960f") //Your Skygear API Key
+        
+//        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Normal)
+        
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        
         return true
     }
 
